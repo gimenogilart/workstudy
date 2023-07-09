@@ -1,0 +1,149 @@
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-size: 60px;
+
+}
+body {
+width: 100%;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+background: linear-gradient(to top,white,black );
+perspective: 20em;
+perspective-origin: 77px 100px;
+
+font-family: 'Monoton', cursive;
+}
+
+.cube {
+transform-style: preserve-3d;
+display: flex;
+align-items: center;
+justify-content: center;
+animation: animate 6s linear infinite;
+z-index: -10;
+position: relative;
+
+}
+@keyframes animate{
+to{
+transform: rotateY(360deg);
+
+}
+
+}
+
+.top , .bottom , .left , .right , .front , .back {
+
+height: 2em;
+width: 2em;
+background-color: rgb(11, 2, 2);
+position: absolute;
+top: 1;
+bottom: 3;
+
+box-shadow: 0 0 50px 10px rgb(0, 0, 0) inset
+, 0 0 0 2em rgb(30, 32, 32) inset;
+            
+
+}
+
+.front{
+transform: translateZ(1em);
+
+}
+.back{
+    transform: translateZ(-1em);
+    
+    }
+.top{
+    transform: translateY(-1em) rotateX(90deg);
+}
+.bottom{
+transform: translateY(1em) rotateX(90deg);
+
+
+}
+.right{
+    transform: translateX(1em) rotateY(90deg);
+
+}
+.left{
+    transform: translateX(-1em) rotateY(90deg);
+
+}
+.shadow{
+    position: absolute;
+    background: #fff;
+    width: 2em;
+    height: 2em;
+    transform: 
+    translateZ(-130px)
+    translateX(40px)
+    rotateX(90deg)
+    rotateZ(3deg);
+    bottom: 2em;
+    
+    box-shadow: 0 50px 100px 50px #100303;
+    filter: blur(100px);
+
+}
+
+
+
+
+
+
+
+h2 {
+display: flex;
+text-align: center;
+margin: 0;
+font-size: 100px;
+font-family: 'Arial Narrow Bold';
+animation: glitch 5s infinite ;
+position: absolute;
+margin-bottom: -2rem;
+
+}
+@keyframes glitch{
+0%{
+    text-shadow: #fff 2px 1px,rgb(99, 4, 55) 4px 0px;
+    
+
+}
+10%{
+    text-shadow: #fff -8px 1px,rgb(99, 4, 55) 0px 0px;
+    
+
+}30%{
+    text-shadow: #fff 10px 9px,rgb(99, 4, 55) -5px 0px;
+    
+
+}35%{
+    text-shadow: #fff 3px 8px,rgb(99, 4, 55) 4px 0px;
+    
+
+}50%{
+    text-shadow: #fff 45px 1px,rgb(99, 4, 55) 0px 18px;
+    
+
+}60%{
+    text-shadow: #fff 78px 1px,rgb(99, 4, 55) 0px 38px;
+    
+
+}
+0%{
+    text-shadow: #fff 78px 1px,rgb(99, 4, 55)1px 20px;
+    
+
+}
+
+}
+.cube:active{
+
+    /*hacer que crezca al dejar apretado y despues de 2.5seg vaya al enlace principal*/
+}
